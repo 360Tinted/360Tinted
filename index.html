@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="360 Tinted - Professional Window Tinting in San Francisco Bay Area. High-quality car window tinting services with premium materials.">
+  <meta name="keywords" content="window tinting, car tinting, San Francisco, heat reduction, tint removal">
+  <meta name="author" content="360 Tinted">
+  <title>360 Tinted - Professional Window Tinting</title>
+  <style>
+    /* Estilos globais */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1, h2, h3 {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Cabeçalho */
+    header {
+      background-image: url('images/img_tesla.webp');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #f0f0f0;
+      color: #fff;
+      text-align: center;
+      padding: 150px 0;
+      position: relative;
+      min-height: 100vh;
+      max-height: 800px;
+    }
+
+    /* Logotipo novo (Logo3.png) */
+    .logo-new {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      max-width: 300px;
+      z-index: 2;
+    }
+
+    /* Menu de Navegação */
+    .main-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+      z-index: 1;
+    }
+
+    .main-nav .container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      margin-left: 320px;
+    }
+
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .main-nav a:hover {
+      color: #007BFF;
+    }
+
+    /* Menu Hamburguer para dispositivos móveis */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 3;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Estilos para o menu quando aberto */
+    .main-nav.active {
+      display: block;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      padding-top: 80px;
+      z-index: 1000;
+    }
+
+    .main-nav.active ul {
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+    }
+
+    .main-nav.active a {
+      font-size: 1.5rem;
+      padding: 10px 0;
+      color: #fff;
+    }
+
+    .btn-quote {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-left: auto;
+    }
+
+    .btn-quote:hover {
+      background-color: #0056b3;
+    }
+
+    /* Conteúdo Atual do Cabeçalho */
+    .header-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 320px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Sobre Nós */
+    #about {
+      background-color: #f9f9f9;
+      padding: 60px 0;
+      text-align: center;
+    }
+    #about img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    /* Serviços */
+    #services {
+      padding: 60px 0;
+      text-align: center;
+    }
+    #services .service-item {
+      display: inline-block;
+      width: 30%;
+      margin: 1%;
+      vertical-align: top;
+    }
+    #services .service-item img {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Por Que Escolher Nos */
+    #why-choose-us {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+    #why-choose-us ul {
+      list-style: none;
+      padding: 0;
+    }
+    #why-choose-us ul li {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    /* Depoimentos */
+    #testimonials {
+      padding: 60px 0;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    #testimonials h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .testimonials-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-item {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 32%;
+      margin: 0.5%;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .testimonial-content p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .rating {
+      font-size: 1.5rem;
+      color: #ffc107;
+      margin-bottom: 15px;
+    }
+
+    .customer-name {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .customer-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .customer-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .car-photo {
+      width: 150px;
+      height: 100px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Contato */
+    #contact {
+      background-color: #333;
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    #contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    #contact-form:target {
+      border: 2px solid #007BFF;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    #contact input, #contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #contact textarea {
+      resize: vertical;
+    }
+
+    #contact button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #contact button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .footer-section {
+      width: 30%;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-section p {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .phone {
+      font-size: 1.2rem;
+    }
+
+    .phone a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .phone a:hover {
+      color: #007BFF;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* ==================== */
+    /* RESPONSIVIDADE MOBILE */
+    /* ==================== */
+    @media (max-width: 768px) {
+      /* Ajustes no cabeçalho */
+      header {
+        padding: 100px 0;
+        min-height: auto;
+        background-size: cover;
+      }
+      
+      .logo-new {
+        max-width: 180px;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .main-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+      
+      .main-nav .container {
+        justify-content: center;
+        padding: 10px;
+      }
+      
+      .main-nav ul {
+        margin-left: 0;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .btn-quote {
+        display: none;
+      }
+      
+      .header-content {
+        padding-top: 100px;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      header p {
+        font-size: 1.2rem;
+      }
+      
+      /* Ajustes na seção de serviços */
+      #services .service-item {
+        width: 100%;
+        margin: 20px 0;
+      }
+      
+      /* Ajustes nos depoimentos */
+      .testimonial-item {
+        width: 100%;
+        margin: 10px 0;
+      }
+      
+      /* Ajustes no rodapé */
+      .footer-section {
+        width: 100%;
+      }
+      
+      /* Formulário de contato */
+      #contact form {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Ajustes adicionais para telas muito pequenas */
+      header {
+        padding: 80px 0;
+      }
+      
+      .logo-new {
+        max-width: 150px;
+      }
+      
+      .main-nav ul {
+        gap: 5px;
+      }
+      
+      .main-nav a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <!-- Botão de Menu Hamburguer -->
+    <button class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Logotipo -->
+    <img src="images/Logo3.png" alt="360 Tinted Logo" class="logo-new">
+
+    <!-- Menu de Navegação -->
+    <nav class="main-nav" id="main-nav">
+      <div class="container">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="gallery.html" target="_blank">Gallery</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <a href="#contact-form" class="btn-quote">Book an Appointment</a>
+      </div>
+    </nav>
+
+    <!-- Conteúdo do Cabeçalho -->
+    <div class="header-content">
+      <h1></h1>
+      <p>Professional Window Tinting in San Francisco Bay Area</p>
+    </div>
+  </header>
+
+  <!-- Sobre Nós -->
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>At <strong>360 Tinted</strong>, we specialize in high-quality car window tinting services. Based in San Francisco Bay Area, we use premium materials and professional techniques to protect your car and enhance its style.</p>
+      <img src="images/About_us.webp" alt="About 360 Tinted">
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-item">
+        <img src="images/Window_tinting_service.webp" alt="Window Tinting">
+        <h3>Window Tinting</h3>
+        <p>Enhance your car's style and protection with our premium tinting services.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/Tint_Removal.webp" alt="Tint Removal">
+        <h3>Tint Removal</h3>
+        <p>We safely remove old or damaged tint for a fresh start.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/Heat_Reduction.webp" alt="Heat Reduction">
+        <h3>Heat Reduction</h3>
+        <p>Keep your car cool with our advanced heat reduction films.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por Que Escolher Nos -->
+  <section id="why-choose-us">
+    <div class="container">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>✅ Premium materials for long-lasting results.</li>
+        <li>✅ Professional and experienced technicians.</li>
+        <li>✅ Competitive pricing and excellent customer service.</li>
+        <li>✅ Satisfaction guaranteed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="testimonials">
+    <div class="container">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <!-- Avaliação 1 - Charlie -->
+        <div class="testimonial-item">
+          <div class="testimonial-content">
+            <p>"Amazing service! My Mercedes looks fantastic, and the heat reduction is incredible."</p>
+            <div class="rating">
+              ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
+            </div>
+            <p class="customer-name">- Charlie</p>
+          </div>
+          <div class="customer-info">
+            <img src="images/Charlie.webp" alt="Charlie" class="customer-photo">
+            <img src="images/mercedes.webp" alt="Mercedes" class="car-photo">
+          </div>
+        </div>
+
+        <!-- Avaliação 2 - John -->
+        <div class="testimonial-item">
+          <div class="testimonial-content">
+            <p>"Professional and affordable. My Porsche has never looked better!"</p>
+            <div class="rating">
+              ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
+            </div>
+            <p class="customer-name">- John</p>
+          </div>
+          <div class="customer-info">
+            <img src="images/John.webp" alt="John" class="customer-photo">
+            <img src="images/img04.webp" alt="Porsche" class="car-photo">
+          </div>
+        </div>
+
+        <!-- Avaliação 3 - Tamara -->
+        <div class="testimonial-item">
+          <div class="testimonial-content">
+            <p>"The best window tinting service in the Bay Area. My Cybertruck is perfect!"</p>
+            <div class="rating">
+              ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
+            </div>
+            <p class="customer-name">- Tamara</p>
+          </div>
+          <div class="customer-info">
+            <img src="images/tamara.webp" alt="Tamara" class="customer-photo">
+            <img src="images/cibertruck.webp" alt="Cybertruck" class="car-photo">
+          </div>
+        </div>
+
+        <!-- Avaliação 4 - Christina -->
+        <div class="testimonial-item">
+          <div class="testimonial-content">
+            <p>"Fantastic service! My Kia looks amazing after the tinting. Highly recommend!"</p>
+            <div class="rating">
+              ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
+            </div>
+            <p class="customer-name">- Christina</p>
+          </div>
+          <div class="customer-info">
+            <img src="images/christina.webp" alt="Christina" class="customer-photo">
+            <img src="images/kia.webp" alt="Kia" class="car-photo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="form-message" style="display: none; color: green; margin-top: 10px;">
+        Message sent successfully! We will contact you soon.
+      </div>
+    </div>
+  </section>	
+
+  <!-- SDK do EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init('wb5WYScf8aScU2Dp-'); // Public Key
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu');
+    const mainNav = document.getElementById('main-nav');
+    const navLinks = mainNav.querySelectorAll('ul li a'); // Seleciona todos os links dentro da lista do menu
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    // Adiciona um event listener ao botão do menu hambúrguer para abrir/fechar o menu
+    mobileMenuButton.addEventListener('click', function() {
+      this.classList.toggle('active');
+      mainNav.classList.toggle('active');
+    });
+
+    // Adiciona um event listener a cada link dentro do menu para fechar o menu ao clicar
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenuButton.classList.remove('active');
+        mainNav.classList.remove('active');
+      });
+    });
+
+    // Adiciona um event listener para o envio do formulário de contato
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_1234567', 'template_97zynr2', this)
+        .then(function () {
+          formMessage.style.display = 'block';
+          contactForm.reset();
+        }, function (error) {
+          alert('Oops! Something went wrong. Please try again.');
+        });
+    });
+  });
+</script>
+</body>
+</html>
+<!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <!-- Endereço e Horário -->
+        <div class="footer-section">
+          <h3>Address & Hours</h3>
+          <p>395 Imperial Way, Daly City, CA, 94015</p>
+          <p><strong>Hours:</strong></p>
+          <p>Monday - Friday: 8am - 5pm</p>
+          <p>Saturday: 8am - 1pm</p>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61572377826208" target="_blank">
+              <img src="images/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/360.tinted/" target="_blank">
+              <img src="images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.tiktok.com/@360tinted?_t=ZP-8uTYjT9bYEg&_r=1" target="_blank">
+              <img src="images/tiktok2.png" alt="TikTok" class="social-icon">
+            </a>
+          </div>
+        </div>
+
+        <!-- Contato e Telefone -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <a href="#contact" class="btn">Contact</a>
+          <p class="phone">
+            <i class="fas fa-phone"></i> <a href="tel:+14156494817">(415) 649-4817</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 360 Tinted. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</body>
+</html>
