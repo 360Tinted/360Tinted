@@ -15,7 +15,6 @@
       background-color: #f0f0f0;
       text-align: center;
     }
-
     /* Cabeçalho Fixo */
     header {
       position: fixed;
@@ -119,24 +118,20 @@
       font-size: 1rem;
       margin: 5px 0;
     }
-
     .social-icons {
       display: flex;
       justify-content: center;
       gap: 15px; /* Espaçamento entre os ícones */
     }
-
     .social-icon {
       width: 40px; /* Tamanho fixo para largura */
       height: 40px; /* Tamanho fixo para altura */
       object-fit: contain; /* Mantém a proporção da imagem */
       transition: transform 0.3s ease; /* Efeito de zoom suave */
     }
-
     .social-icon:hover {
       transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
     }
-
     .btn {
       display: inline-block;
       padding: 10px 20px;
@@ -146,31 +141,25 @@
       text-decoration: none;
       margin-bottom: 10px;
     }
-
     .btn:hover {
       background-color: #0056b3;
     }
-
     .phone {
       font-size: 1.2rem;
     }
-
     .phone a {
       color: #fff;
       text-decoration: none;
     }
-
     .phone a:hover {
       color: #007BFF;
     }
-
     .footer-bottom {
       border-top: 1px solid #444;
       padding-top: 20px;
       margin-top: 20px;
       font-size: 0.9rem;
     }
-
     /* Responsividade */
     @media (max-width: 1200px) {
       .gallery-item {
@@ -178,21 +167,18 @@
         max-width: calc(25% - 20px);
       }
     }
-
     @media (max-width: 768px) {
       .gallery-item {
         flex: 1 1 calc(33.333% - 20px); /* 3 colunas por linha em tablets */
         max-width: calc(33.333% - 20px);
       }
     }
-
     @media (max-width: 480px) {
       .gallery-item {
         flex: 1 1 calc(50% - 20px); /* 2 colunas por linha em dispositivos móveis */
         max-width: calc(50% - 20px);
       }
     }
-
     /* Personalização do Lightbox */
     .lb-close {
       color: #fff; /* Cor do ícone de fechar */
@@ -200,14 +186,12 @@
       opacity: 0.8; /* Transparência */
       transition: opacity 0.3s ease;
     }
-
     .lb-close:hover {
       opacity: 1; /* Aumenta a opacidade ao passar o mouse */
     }
-	/* ==================== */
+/* ==================== */
 /* RESPONSIVIDADE MOBILE */
 /* ==================== */
-
 @media (max-width: 768px) {
   /* Ajustes no cabeçalho fixo */
   header {
@@ -215,41 +199,36 @@
     padding: 10px;
     text-align: center;
   }
-  
-  .logo-new {
+
+    .logo-new {
     max-width: 150px;
     margin-bottom: 10px;
   }
-  
-  .header-text {
+
+    .header-text {
     margin-left: 0;
     font-size: 1rem;
     margin-bottom: 10px;
   }
-  
   .btn-quote {
     margin-left: 0;
     margin-top: 10px;
   }
-  
   /* Ajustes na galeria */
   .gallery {
     margin-top: 180px; /* Mais espaço para o cabeçalho */
   }
-  
   .gallery-item {
     flex: 1 1 calc(50% - 10px);
     max-width: calc(50% - 10px);
   }
 }
-
 @media (max-width: 480px) {
   /* Ajustes para telas muito pequenas */
   .gallery {
     margin-top: 160px;
     padding: 10px;
   }
-  
   .gallery-item {
     flex: 1 1 100%;
     max-width: 100%;
@@ -266,8 +245,7 @@
     <a href="https://book.squareup.com/appointments/9q3v4ga24ppxmq/location/LS5QPP1QJ4WTV/services" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
   </header>
 
-    <div class="gallery">
-        <div class="gallery-item">
+    <div class="gallery">     <div class="gallery-item">
       <a href="images/08 Tesla 03.webp" data-lightbox="gallery" data-title="Tesla 08-03">
         <img src="images/08 Tesla 03.webp" alt="Tesla 08-03" loading="lazy">
       </a>
@@ -277,107 +255,97 @@
         <img src="images/08 Tesla 02.webp" alt="Tesla 08-02" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/08 Tesla 01.webp" data-lightbox="gallery" data-title="Tesla 08-01">
         <img src="images/08 Tesla 01.webp" alt="Tesla 08-01" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/05 Tesla 03.webp" data-lightbox="gallery" data-title="Tesla 05-03">
         <img src="images/05 Tesla 03.webp" alt="Tesla 05-03" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/05 Tesla 02.webp" data-lightbox="gallery" data-title="Tesla 05-02">
         <img src="images/05 Tesla 02.webp" alt="Tesla 05-02" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/05 Tesla 01.webp" data-lightbox="gallery" data-title="Tesla 05-01">
         <img src="images/05 Tesla 01.webp" alt="Tesla 05-01" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/04 Tesla 01.webp" data-lightbox="gallery" data-title="Tesla 04-01">
         <img src="images/04 Tesla 01.webp" alt="Tesla 04-01" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/03 Tesla 01.webp" data-lightbox="gallery" data-title="Tesla 03-01">
         <img src="images/03 Tesla 01.webp" alt="Tesla 03-01" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/03 Tesla 02.webp" data-lightbox="gallery" data-title="Tesla 03-02">
         <img src="images/03 Tesla 02.webp" alt="Tesla 03-02" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/02 Tesla 02.webp" data-lightbox="gallery" data-title="Tesla 02-02">
         <img src="images/02 Tesla 02.webp" alt="Tesla 02-02" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/02 Tesla 01.webp" data-lightbox="gallery" data-title="Tesla 02-01">
         <img src="images/02 Tesla 01.webp" alt="Tesla 02-01" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 Tesla 02.webp" data-lightbox="gallery" data-title="Tesla 01-02">
         <img src="images/01 Tesla 02.webp" alt="Tesla 01-02" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 Tesla 01.webp" data-lightbox="gallery" data-title="Tesla 01-01">
         <img src="images/01 Tesla 01.webp" alt="Tesla 01-01" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 Corolla 02.webp" data-lightbox="gallery" data-title="Corolla 01-02">
         <img src="images/01 Corolla 02.webp" alt="Corolla 01-02" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 Corolla 01.webp" data-lightbox="gallery" data-title="Corolla 01-01">
         <img src="images/01 Corolla 01.webp" alt="Corolla 01-01" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 Civic 03.webp" data-lightbox="gallery" data-title="Civic 01-03">
         <img src="images/01 Civic 03.webp" alt="Civic 01-03" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 Civic 02.webp" data-lightbox="gallery" data-title="Civic 01-02">
         <img src="images/01 Civic 02.webp" alt="Civic 01-02" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 Civic 01.webp" data-lightbox="gallery" data-title="Civic 01-01">
         <img src="images/01 Civic 01.webp" alt="Civic 01-01" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 BMW 02.webp" data-lightbox="gallery" data-title="BMW 01-02">
         <img src="images/01 BMW 02.webp" alt="BMW 01-02" loading="lazy">
       </a>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item">
       <a href="images/01 BMW 01.webp" data-lightbox="gallery" data-title="BMW 01-01">
         <img src="images/01 BMW 01.webp" alt="BMW 01-01" loading="lazy">
       </a>
     </div>
-            <div class="gallery-item">
-      <a href="images/Toyota 2.webp" data-lightbox="gallery" data-title="Toyota 2">
-        <img src="images/Toyota 2.webp" alt="Toyota 2" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/Toyota 1.webp" data-lightbox="gallery" data-title="Toyota 1">
-        <img src="images/Toyota 1.webp" alt="Toyota 1" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
+        <div class="gallery-item">
       <a href="images/Mercedes 2.webp" data-lightbox="gallery" data-title="Mercedes 2">
         <img src="images/Mercedes 2.webp" alt="Mercedes 2" loading="lazy">
       </a>
@@ -457,9 +425,8 @@
           <p><strong>Hours:</strong></p>
           <p>Monday - Friday: 8am - 5:30pm</p>
           <p>Saturday: 9am - 5:30pm</p>
-	  <p>Sunday: 9am - 5:30pm</p>
-	</div>
-
+  <p>Sunday: 9am - 5:30pm</p>
+</div>
                 <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
@@ -490,6 +457,6 @@
   </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-	  <script src="//code.tidio.co/4on4aihudneqp1lzma2oad2wiuww4kgr.js" async></script>
+  <script src="//code.tidio.co/4on4aihudneqp1lzma2oad2wiuww4kgr.js" async></script>
 </body>
 </html>
