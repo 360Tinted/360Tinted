@@ -1,458 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="CIHpI3qY8pOVWNuWycM-VSNhlv2awnc-_hi_wt1QbCk" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - 360 Tinted</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      text-align: center;
-    }
-    /* Cabeçalho Fixo */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-    }
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="CIHpI3qY8pOVWNuWycM-VSNhlv2awnc-_hi_wt1QbCk" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - 360 Tinted</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
 
-    .logo-new {
-      max-width: 200px; /* Tamanho do logotipo */
-    }
+    /* Cabeçalho Fixo */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
 
-    .header-text {
-      font-size: 1.2rem;
-      color: #333;
-      margin-left: 20px;
-    }
+    .logo-new {
+      max-width: 200px; /* Tamanho do logotipo */
+    }
 
-    .btn-quote {
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      white-space: nowrap; /* Evita que o texto do botão quebre em várias linhas */
-      margin-left: 200px; /* Espaçamento à esquerda do botão */
-    }
+    .header-text {
+      font-size: 1.2rem;
+      color: #333;
+      margin-left: 20px;
+    }
 
-    .btn-quote:hover {
-      background-color: #0056b3;
-    }
+    .btn-quote {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      white-space: nowrap; /* Evita que o texto do botão quebre em várias linhas */
+      margin-left: 200px; /* Espaçamento à esquerda do botão */
+    }
 
-    /* Galeria de Fotos */
-    .gallery {
-      margin-top: 120px; /* Espaço para o cabeçalho fixo */
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 20px;
-    }
+    .btn-quote:hover {
+      background-color: #0056b3;
+    }
 
-    .gallery-item {
-      flex: 1 1 calc(20% - 20px); /* 5 colunas por linha em telas grandes */
-      max-width: calc(20% - 20px); /* Limita o tamanho máximo */
-      box-sizing: border-box;
-      aspect-ratio: 1 / 1; /* Mantém as imagens quadradas */
-      overflow: hidden; /* Garante que as imagens não ultrapassem o contêiner */
-    }
+    /* Galeria de Fotos */
+    .gallery {
+      margin-top: 120px; /* Espaço para o cabeçalho fixo */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorcer */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
+    .gallery-item {
+      flex: 1 1 calc(20% - 20px); /* 5 colunas por linha em telas grandes */
+      max-width: calc(20% - 20px); /* Limita o tamanho máximo */
+      box-sizing: border-box;
+      aspect-ratio: 1 / 1; /* Mantém as imagens quadradas */
+      overflow: hidden; /* Garante que as imagens não ultrapassem o contêiner */
+    }
 
-    .gallery-item img:hover {
-      transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorcer */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
 
-    /* Rodapé */
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 40px 0;
-      text-align: center;
-      margin-top: 40px;
-    }
+    .gallery-item img:hover {
+      transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    }
 
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
+    /* Rodapé */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
 
-    .footer-section {
-      width: 30%; /* Largura de cada seção */
-      margin-bottom: 20px;
-    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
 
-    .footer-section h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
+    .footer-section {
+      width: 30%; /* Largura de cada seção */
+      margin-bottom: 20px;
+    }
 
-    .footer-section p {
-      font-size: 1rem;
-      margin: 5px 0;
-    }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px; /* Espaçamento entre os ícones */
-    }
-    .social-icon {
-      width: 40px; /* Tamanho fixo para largura */
-      height: 40px; /* Tamanho fixo para altura */
-      object-fit: contain; /* Mantém a proporção da imagem */
-      transition: transform 0.3s ease; /* Efeito de zoom suave */
-    }
-    .social-icon:hover {
-      transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-bottom: 10px;
-    }
-    .btn:hover {
-      background-color: #0056b3;
-    }
-    .phone {
-      font-size: 1.2rem;
-    }
-    .phone a {
-      color: #fff;
-      text-decoration: none;
-    }
-    .phone a:hover {
-      color: #007BFF;
-    }
-    .footer-bottom {
-      border-top: 1px solid #444;
-      padding-top: 20px;
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
-    /* Responsividade */
-    @media (max-width: 1200px) {
-      .gallery-item {
-        flex: 1 1 calc(25% - 20px); /* 4 colunas por linha em telas médias */
-        max-width: calc(25% - 20px);
-      }
-    }
-    @media (max-width: 768px) {
-      .gallery-item {
-        flex: 1 1 calc(33.333% - 20px); /* 3 colunas por linha em tablets */
-        max-width: calc(33.333% - 20px);
-      }
-    }
-    @media (max-width: 480px) {
-      .gallery-item {
-        flex: 1 1 calc(50% - 20px); /* 2 colunas por linha em dispositivos móveis */
-        max-width: calc(50% - 20px);
-      }
-    }
-    /* Personalização do Lightbox */
-    .lb-close {
-      color: #fff; /* Cor do ícone de fechar */
-      font-size: 2rem; /* Tamanho do ícone */
-      opacity: 0.8; /* Transparência */
-      transition: opacity 0.3s ease;
-    }
-    .lb-close:hover {
-      opacity: 1; /* Aumenta a opacidade ao passar o mouse */
-    }
-/* ==================== */
+    .footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-section p {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px; /* Espaçamento entre os ícones */
+    }
+
+    .social-icon {
+      width: 40px; /* Tamanho fixo para largura */
+      height: 40px; /* Tamanho fixo para altura */
+      object-fit: contain; /* Mantém a proporção da imagem */
+      transition: transform 0.3s ease; /* Efeito de zoom suave */
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .phone {
+      font-size: 1.2rem;
+    }
+
+    .phone a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .phone a:hover {
+      color: #007BFF;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsividade */
+    @media (max-width: 1200px) {
+      .gallery-item {
+        flex: 1 1 calc(25% - 20px); /* 4 colunas por linha em telas médias */
+        max-width: calc(25% - 20px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-item {
+        flex: 1 1 calc(33.333% - 20px); /* 3 colunas por linha em tablets */
+        max-width: calc(33.333% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-item {
+        flex: 1 1 calc(50% - 20px); /* 2 colunas por linha em dispositivos móveis */
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    /* Personalização do Lightbox */
+    .lb-close {
+      color: #fff; /* Cor do ícone de fechar */
+      font-size: 2rem; /* Tamanho do ícone */
+      opacity: 0.8; /* Transparência */
+      transition: opacity 0.3s ease;
+    }
+
+    .lb-close:hover {
+      opacity: 1; /* Aumenta a opacidade ao passar o mouse */
+    }
+	/* ==================== */
 /* RESPONSIVIDADE MOBILE */
 /* ==================== */
+
 @media (max-width: 768px) {
-  /* Ajustes no cabeçalho fixo */
-  header {
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
-  }
-
-    .logo-new {
-    max-width: 150px;
-    margin-bottom: 10px;
-  }
-
-    .header-text {
-    margin-left: 0;
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  .btn-quote {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-  /* Ajustes na galeria */
-  .gallery {
-    margin-top: 180px; /* Mais espaço para o cabeçalho */
-  }
-  .gallery-item {
-    flex: 1 1 calc(50% - 10px);
-    max-width: calc(50% - 10px);
-  }
+  /* Ajustes no cabeçalho fixo */
+  header {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .logo-new {
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
+  
+  .header-text {
+    margin-left: 0;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .btn-quote {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  /* Ajustes na galeria */
+  .gallery {
+    margin-top: 180px; /* Mais espaço para o cabeçalho */
+  }
+  
+  .gallery-item {
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
 }
+
 @media (max-width: 480px) {
-  /* Ajustes para telas muito pequenas */
-  .gallery {
-    margin-top: 160px;
-    padding: 10px;
-  }
-  .gallery-item {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+  /* Ajustes para telas muito pequenas */
+  .gallery {
+    margin-top: 160px;
+    padding: 10px;
+  }
+  
+  .gallery-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
-  </style>
+  </style>
 </head>
 <body>
-    <header>
-    <img src="images/Logo3.png" alt="360 Tinted Logo" class="logo-new">
-    <div class="header-text">
-      Explore our gallery of cars with high-quality tinting.
-    </div>
-    <a href="https://book.squareup.com/appointments/9q3v4ga24ppxmq/location/LS5QPP1QJ4WTV/services" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
-  </header>
+  <!-- Cabeçalho Fixo -->
+  <header>
+    <img src="images/Logo3.png" alt="360 Tinted Logo" class="logo-new">
+    <div class="header-text">
+      Explore our gallery of cars with high-quality tinting.
+    </div>
+    <a href="https://book.squareup.com/appointments/9q3v4ga24ppxmq/location/LS5QPP1QJ4WTV/services" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
+  </header>
 
-    <div class="gallery">
-        <div class="gallery-item">
-      <a href="images/08Tesla03.webp" data-lightbox="gallery" data-title="Tesla 08-03">
-        <img src="images/08Tesla03.webp" alt="Tesla 08-03" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/08Tesla02.webp" data-lightbox="gallery" data-title="Tesla 08-02">
-        <img src="images/08Tesla02.webp" alt="Tesla 08-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/08Tesla01.webp" data-lightbox="gallery" data-title="Tesla 08-01">
-        <img src="images/08Tesla01.webp" alt="Tesla 08-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/05Tesla03.webp" data-lightbox="gallery" data-title="Tesla 05-03">
-        <img src="images/05Tesla03.webp" alt="Tesla 05-03" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/05Tesla02.webp" data-lightbox="gallery" data-title="Tesla 05-02">
-        <img src="images/05Tesla02.webp" alt="Tesla 05-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/05Tesla01.webp" data-lightbox="gallery" data-title="Tesla 05-01">
-        <img src="images/05Tesla01.webp" alt="Tesla 05-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/04Tesla01.webp" data-lightbox="gallery" data-title="Tesla 04-01">
-        <img src="images/04Tesla01.webp" alt="Tesla 04-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/03Tesla01.webp" data-lightbox="gallery" data-title="Tesla 03-01">
-        <img src="images/03Tesla01.webp" alt="Tesla 03-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/03Tesla02.webp" data-lightbox="gallery" data-title="Tesla 03-02">
-        <img src="images/03Tesla02.webp" alt="Tesla 03-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/02Tesla02.webp" data-lightbox="gallery" data-title="Tesla 02-02">
-        <img src="images/02Tesla02.webp" alt="Tesla 02-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/02Tesla01.webp" data-lightbox="gallery" data-title="Tesla 02-01">
-        <img src="images/02Tesla01.webp" alt="Tesla 02-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Tesla02.webp" data-lightbox="gallery" data-title="Tesla 01-02">
-        <img src="images/01Tesla02.webp" alt="Tesla 01-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Tesla01.webp" data-lightbox="gallery" data-title="Tesla 01-01">
-        <img src="images/01Tesla01.webp" alt="Tesla 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Corolla02.webp" data-lightbox="gallery" data-title="Corolla 01-02">
-        <img src="images/01Corolla02.webp" alt="Corolla 01-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Corolla01.webp" data-lightbox="gallery" data-title="Corolla 01-01">
-        <img src="images/01Corolla01.webp" alt="Corolla 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Civic03.webp" data-lightbox="gallery" data-title="Civic 01-03">
-        <img src="images/01Civic03.webp" alt="Civic 01-03" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Civic02.webp" data-lightbox="gallery" data-title="Civic 01-02">
-        <img src="images/01Civic02.webp" alt="Civic 01-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Civic01.webp" data-lightbox="gallery" data-title="Civic 01-01">
-        <img src="images/01Civic01.webp" alt="Civic 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01BMW02.webp" data-lightbox="gallery" data-title="BMW 01-02">
-        <img src="images/01BMW02.webp" alt="BMW 01-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01BMW01.webp" data-lightbox="gallery" data-title="BMW 01-01">
-        <img src="images/01BMW01.webp" alt="BMW 01-01" loading="lazy">
-      </a>
-    </div>
-        <div class="gallery-item">
-      <a href="images/01Mercedes01.webp" data-lightbox="gallery" data-title="Mercedes 01-01">
-        <img src="images/01Mercedes01.webp" alt="Mercedes 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01chrysler1.webp" data-lightbox="gallery" data-title="Chrysler 01-01">
-        <img src="images/01chrysler1.webp" alt="Chrysler 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Cibertruck01.webp" data-lightbox="gallery" data-title="Cybertruck 01-01">
-        <img src="images/01Cibertruck01.webp" alt="Cybertruck 01-01" loading="lazy">
-      </a>
-    </div>
+  <!-- Galeria de Fotos -->
+  <div class="gallery">
     <div class="gallery-item">
-      <a href="images/01Cibertruck02.webp" data-lightbox="gallery" data-title="Cybertruck 01-02">
-        <img src="images/01Cibertruck02.webp" alt="Cybertruck 01-02" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/02BMW01.webp" data-lightbox="gallery" data-title="BMW 02-01">
-        <img src="images/02BMW01.webp" alt="BMW 02-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Audi1.webp" data-lightbox="gallery" data-title="Audi 01-01">
-        <img src="images/01Audi1.webp" alt="Audi 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01kia01.webp" data-lightbox="gallery" data-title="Kia 01-01">
-        <img src="images/01kia01.webp" alt="Kia 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Nissan01.webp" data-lightbox="gallery" data-title="Nissan 01-01">
-        <img src="images/01Nissan01.webp" alt="Nissan 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Kona01.webp" data-lightbox="gallery" data-title="Kona 01-01">
-        <img src="images/01Kona01.webp" alt="Kona 01-01" loading="lazy">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/01Dodge01.webp" data-lightbox="gallery" data-title="Dodge 01-01">
-        <img src="images/01Dodge01.webp" alt="Dodge 01-01" loading="lazy">
-      </a>
-    </div>
+      <a href="images/01Toyota1.webp" data-lightbox="gallery" data-title="Toyota 2">
+        <img src="images/01Toyota1.webp" alt="Toyota 2" loading="lazy">
+      </a>
+    </div>
     <div class="gallery-item">
-      <a href="images/01Acura1.webp" data-lightbox="gallery" data-title="Acura 01-01">
-        <img src="images/01Acura1.webp" alt="Acura 01-01" loading="lazy">
-      </a>
-    </div>
+      <a href="images/01Toyota2.webp" data-lightbox="gallery" data-title="Toyota 1">
+        <img src="images/01Toyota2.webp" alt="Toyota 1" loading="lazy">
+      </a>
+    </div>
     <div class="gallery-item">
-      <a href="images/01Toyota1.webp" data-lightbox="gallery" data-title="Toyota 01-01">
-        <img src="images/01Toyota1.webp" alt="Toyota 01-01" loading="lazy">
-      </a>
-    </div>
+      <a href="images/01Mercedes01.webp" data-lightbox="gallery" data-title="Mercedes 2">
+        <img src="images/01Mercedes01.webp" alt="Mercedes 2" loading="lazy">
+      </a>
+    </div>
     <div class="gallery-item">
-      <a href="images/01Toyota2.webp" data-lightbox="gallery" data-title="Toyota 01-02">
-        <img src="images/01Toyota2.webp" alt="Toyota 01-02" loading="lazy">
-      </a>
-    </div>
-  </div>
-    <footer>
-    <div class="container">
-      <div class="footer-content">
-                <div class="footer-section">
-          <h3>Address & Hours</h3>
-          <p>90 Glenn Way, San Carlos, CA, 94070</p>
-          <p><strong>Hours:</strong></p>
-          <p>Monday - Friday: 8am - 5:30pm</p>
-          <p>Saturday: 9am - 5:30pm</p>
-  <p>Sunday: 9am - 5:30pm</p>
-</div>
-                <div class="footer-section">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61572377826208" target="_blank">
-              <img src="images/facebook.png" alt="Facebook" class="social-icon">
-            </a>
-            <a href="https://www.instagram.com/360.tinted/" target="_blank">
-              <img src="images/instagram.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://www.tiktok.com/@360tinted?_t=ZP-8uTYjT9bYEg&_r=1" target="_blank">
-              <img src="images/tiktok2.png" alt="TikTok" class="social-icon">
-            </a>
-          </div>
-        </div>
+      <a href="images/01chrysler1.webp" data-lightbox="gallery" data-title="Chrysler 1">
+        <img src="images/01chrysler1.webp" alt="Chrysler 1" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01Cibertruck01.webp" data-lightbox="gallery" data-title="Cyber 2">
+        <img src="images/01Cibertruck01.webp" alt="Cyber 2" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01BMW02.webp" data-lightbox="gallery" data-title="BMW 2">
+        <img src="images/01BMW02.webp" alt="BMW 2" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01Audi1.webp" data-lightbox="gallery" data-title="Audi 1">
+        <img src="images/01Audi1.webp" alt="Audi 1" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01kia01.webp" data-lightbox="gallery" data-title="Kia">
+        <img src="images/01kia01.webp" alt="Kia" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01Nissan01.webp" data-lightbox="gallery" data-title="Nissan 1">
+        <img src="images/01Nissan01.webp" alt="Nissan 1" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01Mercedes01.webp" data-lightbox="gallery" data-title="Mercedes">
+        <img src="images/01Mercedes01.webp" alt="Mercedes" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01Kona01.webp" data-lightbox="gallery" data-title="Kona 1">
+        <img src="images/01Kona01.webp" alt="Kona 1" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/02Dodge1.webp" data-lightbox="gallery" data-title="Dodge 1">
+        <img src="images/02Dodge1.webp" alt="Dodge 1" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01Corolla01.webp" data-lightbox="gallery" data-title="Corola 1">
+        <img src="images/01Corolla01.webp" alt="Corola 1" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01BMW01.webp" data-lightbox="gallery" data-title="BMW 1">
+        <img src="images/01BMW01.webp" alt="BMW 1" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01Acura1.webp" data-lightbox="gallery" data-title="Acura 1">
+        <img src="images/01Acura1.webp" alt="Acura 1" loading="lazy">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/01Cibertruck02.webp" data-lightbox="gallery" data-title="Cybertruck">
+        <img src="images/01Cibertruck02.webp" alt="Cybertruck" loading="lazy">
+      </a>
+    </div>
+  </div>
 
-                <div class="footer-section">
-          <h3>Contact Us</h3>
-          <a href="#contact" class="btn">Contact</a>
-          <p class="phone">
-            <i class="fas fa-phone"></i> <a href="tel:+14156494817">(415) 630-3646</a>
-          </p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 360 Tinted. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <!-- Endereço e Horário -->
+        <div class="footer-section">
+          <h3>Address & Hours</h3>
+          <p>90 Glenn Way, San Carlos, CA, 94070</p>
+          <p><strong>Hours:</strong></p>
+          <p>Monday - Friday: 8am - 5:30pm</p>
+          <p>Saturday: 9am - 5:30pm</p>
+	  <p>Sunday: 9am - 5:30pm</p>
+	</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-  <script src="//code.tidio.co/4on4aihudneqp1lzma2oad2wiuww4kgr.js" async></script>
+        <!-- Redes Sociais -->
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61572377826208" target="_blank">
+              <img src="images/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/360.tinted/" target="_blank">
+              <img src="images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.tiktok.com/@360tinted?_t=ZP-8uTYjT9bYEg&_r=1" target="_blank">
+              <img src="images/tiktok2.png" alt="TikTok" class="social-icon">
+            </a>
+          </div>
+        </div>
+
+        <!-- Contato e Telefone -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <a href="#contact" class="btn">Contact</a>
+          <p class="phone">
+            <i class="fas fa-phone"></i> <a href="tel:+14156494817">(415) 630-3646</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 360 Tinted. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+	<!-- Tidio Chat Widget -->
+  <script src="//code.tidio.co/4on4aihudneqp1lzma2oad2wiuww4kgr.js" async></script>
 </body>
 </html>
