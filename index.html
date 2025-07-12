@@ -195,24 +195,106 @@
       margin-top: 20px;
     }
 
-    /* Serviços */
-    #services {
-      padding: 60px 0;
+    /* === NEW: Seção de Serviços Resumida para a Landing Page === */
+    .landing-services-section {
+      padding: 60px 20px;
+      background-color: #fff;
       text-align: center;
     }
-    #services .service-item {
-      display: inline-block;
-      width: 30%;
-      margin: 1%;
-      vertical-align: top;
-    }
-    #services .service-item img {
-      max-width: 200px;
-      height: auto;
+
+    .landing-services-section h2 {
+      font-size: 2.8rem;
+      color: #333;
       margin-bottom: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
     }
+
+    .landing-services-section .section-description {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto 50px auto;
+      line-height: 1.6;
+    }
+
+    .landing-service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px; /* Espaçamento entre os cards */
+      margin-bottom: 50px;
+    }
+
+    .landing-service-card {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      text-align: center;
+      flex: 1 1 calc(33.333% - 60px); /* 3 colunas em telas grandes */
+      max-width: 350px; /* Largura máxima para cada card */
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 400px; /* Garante altura mínima para uniformidade */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .landing-service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .landing-service-card img {
+      max-width: 100%;
+      height: 200px; /* Altura fixa para as imagens */
+      object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .landing-service-card h3 {
+      font-size: 1.8rem;
+      color: #007BFF;
+      margin-bottom: 10px;
+      flex-grow: 0; /* Não cresce */
+    }
+
+    .landing-service-card p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1; /* Permite que o parágrafo preencha o espaço disponível */
+    }
+
+    .landing-service-card .card-price { /* Estilo opcional para o preço */
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #333;
+      margin-top: auto; /* Empurra para o fundo do card */
+    }
+
+    .btn-view-more {
+      display: inline-block;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .btn-view-more:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    /* === END NEW: Seção de Serviços Resumida para a Landing Page === */
+
 
     /* Por Que Escolher Nos */
     #why-choose-us {
@@ -418,6 +500,12 @@
     /* ==================== */
     /* RESPONSIVIDADE MOBILE */
     /* ==================== */
+    @media (max-width: 992px) {
+      .landing-service-card {
+        flex: 1 1 calc(50% - 40px); /* 2 colunas */
+      }
+    }
+
     @media (max-width: 768px) {
       /* Ajustes no cabeçalho */
       header {
@@ -474,11 +562,30 @@
       }
       
       /* Ajustes na seção de serviços */
-      #services .service-item {
-        width: 100%;
-        margin: 20px 0;
-      }
+      /* Original #services was removed */
       
+      /* New Landing Services Section Responsiveness */
+      .landing-services-section h2 {
+        font-size: 2.2rem;
+      }
+      .landing-services-section .section-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+      .landing-service-card {
+        flex: 1 1 100%; /* 1 coluna em mobile */
+        max-width: 100%;
+        min-height: auto; /* Remove altura mínima */
+        padding: 20px;
+      }
+      .landing-service-card img {
+        height: 180px; /* Ajusta altura da imagem em mobile */
+      }
+      .btn-view-more {
+        font-size: 1rem;
+        padding: 12px 25px;
+      }
+
       /* Ajustes nos depoimentos */
       .testimonial-item {
         width: 100%;
@@ -513,24 +620,31 @@
       .main-nav a {
         font-size: 0.9rem;
       }
+
+      /* New Landing Services Section Responsiveness */
+      .landing-services-section {
+        padding: 30px 10px;
+      }
+      .landing-service-card {
+        padding: 15px;
+      }
+      .landing-service-card h3 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header>
-    <!-- Botão de Menu Hamburguer -->
     <button class="menu-toggle" id="mobile-menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Logotipo -->
     <img src="images/Logo3.png" alt="360 Tinted Logo" class="logo-new">
 
-    <!-- Menu de Navegação -->
-<nav class="main-nav" id="main-nav">
+    <nav class="main-nav" id="main-nav">
   <div class="container">
     <ul>
       <li><a href="#home">Home</a></li>
@@ -542,47 +656,49 @@
     <a href="https://book.squareup.com/appointments/9q3v4ga24ppxmq/location/LS5QPP1QJ4WTV/services" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
   </div>
 </nav>
-
-    <!-- Conteúdo do Cabeçalho -->
-    <div class="header-content">
-      <h1>Professional Window Tinting in San Carlos & Bay Area</h1>
-      <p>Professional Window Tinting in San Francisco Bay Area</p>
-    </div>
-  </header>
-
-  <!-- Sobre Nós -->
+<div class="header-content">
+  <h1>Professional Window Tinting in San Carlos & Bay Area</h1>
+  <p>Professional Window Tinting in San Francisco Bay Area</p>
+</div>
+</header>
   <section id="about">
     <div class="container">
       <h2>About Us</h2>
-      <p>At <strong>360 Tinted</strong>, we provide expert ceramic and carbon window tinting for all types of vehicles – especially Teslas – in San Carlos, Redwood City, San Mateo, Palo Alto, and surrounding cities. We use premium materials and professional techniques to protect your car and improve its style and comfort.</p>
+      <p>At <strong>360 Tinted</strong>, we provide expert ceramic and carbon window tinting for all types of vehicles – especially Teslas – in San Carlos, Redwood City, San Mateo, Palo Alto, and surrounding cities.
+      We use premium materials and professional techniques to protect your car and improve its style and comfort.</p>
       <img src="images/About_us.webp" alt="About 360 Tinted">
     </div>
   </section>
 
-  <!-- Serviços -->
-  <section id="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="service-item">
-        <img src="images/Window_tinting_service.webp" alt="Window Tinting">
-        <h3>Window Tinting</h3>
-        <p>Enhance your car's style and protection with our premium tinting services.</p>
-      </div>
-      <div class="service-item">
-        <img src="images/Tint_Removal.webp" alt="Tint Removal">
-        <h3>Tint Removal</h3>
-        <p>We safely remove old or damaged tint for a fresh start.</p>
-      </div>
-      <div class="service-item">
-        <img src="images/Heat_Reduction.webp" alt="Heat Reduction">
-        <h3>Heat Reduction</h3>
-        <p>Keep your car cool with our advanced heat reduction films.</p>
-      </div>
-    </div>
-  </section>
+<section id="services" class="landing-services-section">
+  <div class="container">
+    <h2>Our Top Services</h2>
+    <p class="section-description">Discover the perfect tinting solution for your vehicle. We offer premium films for ultimate protection and style.</p>
 
-  <!-- Por Que Escolher Nos -->
-  <section id="why-choose-us">
+    <div class="landing-service-list">
+      <div class="landing-service-card">
+        <img src="images/Full_Car_Carbon_Package.webp" alt="Car with Full Carbon Tint">
+        <h3>Carbon Tinting (Doors & Rear)</h3>
+        <p>Enhance your ride with high-performance film that blocks heat and UV rays, offering a clean, stylish look without signal interference.</p>
+        </div>
+
+      <div class="landing-service-card">
+        <img src="images/Full_Car_Ceramic_Package.webp" alt="Car with Full Ceramic Tint">
+        <h3>Ceramic Tinting (Full Car)</h3>
+        <p>Experience superior heat rejection and enhanced UV protection with our premium ceramic film for unmatched comfort and clarity.</p>
+        </div>
+
+      <div class="landing-service-card">
+        <img src="images/Large_Service.webp" alt="Large Vehicle with Custom Tint">
+        <h3>Custom Large Vehicle Tint</h3>
+        <p>Tailored solutions for SUVs, vans, and vehicles with panoramic roofs. Get the perfect film for your unique vehicle needs.</p>
+        </div>
+    </div>
+
+    <a href="services.html" class="btn-view-more">View All Services</a>
+  </div>
+</section>
+<section id="why-choose-us">
     <div class="container">
       <h2>Why Choose Us?</h2>
       <ul>
@@ -594,18 +710,14 @@
     </div>
   </section>
 
-  <!-- Depoimentos -->
   <section id="testimonials">
     <div class="container">
       <h2>What Our Customers Say</h2>
       <div class="testimonials-grid">
-        <!-- Avaliação 1 - Charlie -->
         <div class="testimonial-item">
           <div class="testimonial-content">
             <p>"Amazing service! My Mercedes looks fantastic, and the heat reduction is incredible."</p>
-            <div class="rating">
-              ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
-            </div>
+            <div class="rating"> ⭐⭐⭐⭐⭐ </div>
             <p class="customer-name">- Charlie</p>
           </div>
           <div class="customer-info">
@@ -614,13 +726,10 @@
           </div>
         </div>
 
-        <!-- Avaliação 2 - John -->
         <div class="testimonial-item">
           <div class="testimonial-content">
             <p>"Professional and affordable. My Porsche has never looked better!"</p>
-            <div class="rating">
-              ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
-            </div>
+            <div class="rating"> ⭐⭐⭐⭐⭐ </div>
             <p class="customer-name">- John</p>
           </div>
           <div class="customer-info">
@@ -629,13 +738,10 @@
           </div>
         </div>
 
-        <!-- Avaliação 3 - Tamara -->
         <div class="testimonial-item">
           <div class="testimonial-content">
             <p>"The best window tinting service in the Bay Area. My Cybertruck is perfect!"</p>
-            <div class="rating">
-              ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
-            </div>
+            <div class="rating"> ⭐⭐⭐⭐⭐ </div>
             <p class="customer-name">- Tamara</p>
           </div>
           <div class="customer-info">
@@ -644,13 +750,10 @@
           </div>
         </div>
 
-        <!-- Avaliação 4 - Christina -->
         <div class="testimonial-item">
           <div class="testimonial-content">
             <p>"Fantastic service! My Kia looks amazing after the tinting. Highly recommend!"</p>
-            <div class="rating">
-              ⭐⭐⭐⭐⭐ <!-- 5 estrelas -->
-            </div>
+            <div class="rating"> ⭐⭐⭐⭐⭐ </div>
             <p class="customer-name">- Christina</p>
           </div>
           <div class="customer-info">
@@ -662,7 +765,7 @@
     </div>
   </section>
 
-  <!-- Contato -->
+ <!-- Contato -->
   <section id="contact">
     <div class="container">
       <h2>Contact Us</h2>
