@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="CIHpI3qY8pOVWNuWycM-VSNhlv2awnc-_hi_wt1QbCk" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - 360 Tinted</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    /* Cabeçalho Fixo */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      justify-content: space-between; /* Adicionado para espaçar os itens */
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-new {
+      max-width: 200px;
+    }
+
+    .header-text {
+      font-size: 1.2rem;
+      color: #333;
+      margin-left: 20px;
+      white-space: nowrap; /* Evita que o texto quebre */
+    }
+
+    .btn-container {
+        display: flex;
+        gap: 15px; /* Espaçamento entre os botões */
+    }
+
+    .btn-quote, .btn-main-site {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-quote:hover, .btn-main-site:hover {
+      background-color: #0056b3;
+    }
+
+    /* Seção de Serviços */
+    .services-container {
+      margin-top: 120px; /* Espaço para o cabeçalho fixo */
+      padding: 20px;
+      max-width: 1200px; /* Largura máxima para centralizar */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .service-category h2 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px; /* Espaçamento entre os cards de serviço */
+    }
+
+    .service-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: left;
+      flex: 1 1 calc(33.333% - 50px); /* 3 colunas em telas grandes */
+      max-width: calc(33.333% - 50px);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Para empurrar o preço e tempo para baixo */
+      min-height: 320px; /* Aumentei um pouco a altura mínima para acomodar a imagem */
+    }
+
+    .service-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 5px; /* Opcional: arredonda as bordas da imagem */
+    }
+
+    .service-card h3 {
+      color: #007BFF;
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .service-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end; /* Alinha o preço/tempo na parte inferior */
+      margin-top: auto; /* Empurra para o final do card */
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+    }
+
+    .service-details .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .service-details .time {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+    }
+
+    .footer-section {
+      width: 30%;
+      margin-bottom: 20px;
+      text-align: left; /* Alinha o texto das seções do rodapé */
+    }
+
+    .footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-section p {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start; /* Alinha os ícones à esquerda */
+      gap: 15px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .phone {
+      font-size: 1.2rem;
+    }
+
+    .phone a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .phone a:hover {
+      color: #007BFF;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 1200px) {
+      .service-card {
+        flex: 1 1 calc(50% - 30px); /* 2 colunas */
+        max-width: calc(50% - 30px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Ajustes no cabeçalho fixo */
+      header {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+        height: auto; /* Permite que o cabeçalho se ajuste ao conteúdo */
+      }
+
+      .header-left {
+          flex-direction: column;
+          margin-bottom: 10px;
+      }
+
+      .logo-new {
+        max-width: 150px;
+        margin-bottom: 10px;
+      }
+
+      .header-text {
+        margin-left: 0;
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+
+      .btn-container {
+          flex-direction: column; /* Botões um abaixo do outro */
+          width: 100%;
+          gap: 10px;
+      }
+
+      .btn-quote, .btn-main-site {
+        width: calc(100% - 20px); /* Ajusta a largura do botão */
+        margin: 0 auto; /* Centraliza */
+      }
+
+      /* Ajustes na seção de serviços */
+      .services-container {
+        margin-top: 200px; /* Mais espaço para o cabeçalho ajustado */
+        padding: 15px;
+      }
+
+      .service-category h2 {
+          font-size: 2rem;
+      }
+
+      .service-card {
+        flex: 1 1 100%; /* 1 coluna */
+        max-width: 100%;
+        min-height: auto; /* Remove altura mínima em mobile */
+        padding: 20px;
+      }
+
+      .service-card img {
+        margin-bottom: 10px; /* Reduz o espaçamento abaixo da imagem em mobile */
+      }
+
+      /* Ajustes no rodapé */
+      .footer-content {
+        flex-direction: column;
+        padding: 0 15px;
+      }
+
+      .footer-section {
+        width: 100%;
+        text-align: center; /* Centraliza texto do rodapé */
+      }
+
+      .social-icons {
+        justify-content: center; /* Centraliza ícones sociais */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-container {
+        margin-top: 180px; /* Ajuste fino para cabeçalho */
+        padding: 10px;
+      }
+      .service-card {
+        padding: 15px;
+      }
+      .service-card h3 {
+        font-size: 1.5rem;
+      }
+      .service-details .price {
+        font-size: 1.3rem;
+      }
+      .footer-section h3 {
+        font-size: 1.3rem;
+      }
+      .phone {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+        <img src="images/Logo3.png" alt="360 Tinted Logo" class="logo-new">
+        <div class="header-text">
+            Our Premium Tinting Services
+        </div>
+    </div>
+    <div class="btn-container">
+        <a href="https://www.360tinted.com/" class="btn-main-site">Back to Main Site</a>
+        <a href="https://book.squareup.com/appointments/9q3v4ga24ppxmq/location/LS5QPP1QJ4WTV/services" target="_blank" rel="noopener noreferrer" class="btn-quote">Book Now</a>
+    </div>
+  </header>
+
+  <div class="services-container">
+    <div class="service-category">
+      <h2>Carbon Tinting Services</h2>
+      <div class="service-list">
+        <div class="service-card">
+          <img src="images/Tint_Carbon.webp" alt="Carbon Tint on Car">
+          <h3>Carbon Tinting Installation (Doors and Rear Window)</h3>
+          <p>Upgrade your ride with our **Carbon Tint** package for all four doors and the rear window. This high-performance film blocks heat and UV rays, giving your car a **sleek, private look** without signal interference. Get a great balance of **protection and style** for your daily drive.</p>
+          <div class="service-details">
+            <span class="price">$199</span>
+            <span class="time">Time: 7 hrs</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="images/windshield_carbon_tint.webp" alt="Carbon Tint on Windshield">
+          <h3>Carbon Tinting Installation (Windshield)</h3>
+          <p>Protect your interior and reduce glare with a **Carbon Tint** on your windshield. This film significantly **reduces heat and UV rays** for a cooler cabin and clearer vision, day or night. It's a **smart, affordable upgrade** for comfort and long-term protection.</p>
+          <div class="service-details">
+            <span class="price">$150</span>
+            <span class="time">Time: 4 hrs</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="images/Full_Car_Carbon_Package.webp" alt="Full Car Carbon Tint">
+          <h3>Carbon Tinting (Full Car + Windshield)</h3>
+          <p>Go all-in with our **Full Carbon Tint package**, covering all windows and the windshield. Enjoy a significantly **cooler, more comfortable ride** with maximum UV protection, reduced glare, and a **uniform, sleek look** from every angle. The ideal choice for **complete coverage and lasting performance.**</p>
+          <div class="service-details">
+            <span class="price">$349</span>
+            <span class="time">Time: 10 hrs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-category">
+      <h2>Ceramic Tinting Services</h2>
+      <div class="service-list">
+        <div class="service-card">
+          <img src="images/Tint_Ceramic.webp" alt="Ceramic Tint on Car">
+          <h3>Ceramic Tint Installation (Doors and Rear Window)</h3>
+          <p>Experience the ultimate upgrade with **Ceramic Tint** for your doors and rear window. This premium film offers **superior heat rejection and enhanced UV protection** with absolutely no signal interference. Get a **clear, sophisticated finish** that provides maximum comfort and privacy.</p>
+          <div class="service-details">
+            <span class="price">$299</span>
+            <span class="time">Time: 7 hrs</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="images/windshield_ceramic_tint.webp" alt="Ceramic Tint on Windshield">
+          <h3>Ceramic Tinting Installation (Windshield)</h3>
+          <p>Achieve **next-level comfort and clarity** with Ceramic Tint on your windshield. This ultra-premium film **blocks intense infrared heat and harmful UV rays**, while drastically reducing glare without compromising visibility. A **smart investment** for a cooler interior, safer driving, and elite protection.</p>
+          <div class="service-details">
+            <span class="price">$250</span>
+            <span class="time">Time: 4 hrs</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="images/Full_Car_Ceramic_Package.webp" alt="Full Car Ceramic Tint">
+          <h3>Ceramic Tinting (Full Car + Windshield)</h3>
+          <p>Protect your entire vehicle with our **ultimate Ceramic Tint package** – all windows plus the windshield. Enjoy **industry-leading heat and UV rejection**, unmatched clarity, and zero signal interference. This is the **best choice for maximum comfort, style, and uncompromising protection.** **Premium look. Premium performance. Built to last.**</p>
+          <div class="service-details">
+            <span class="price">$549</span>
+            <span class="time">Time: 10 hrs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-category">
+      <h2>Specialty Services</h2>
+      <div class="service-list">
+        <div class="service-card">
+          <img src="images/Large_Service.webp" alt="Tinting on a Large Vehicle">
+          <h3>Custom Tint Service – Large Vehicles / Panoramic Glass</h3>
+          <p>Have a larger vehicle, SUV, van, or unique glass? We've got the solution. Our **Custom Tint Service** is tailored for vehicles with panoramic roofs or oversized windows. We’ll assess your specific needs and recommend the **perfect high-performance ceramic or premium carbon film**. **Request a custom quote today** for the protection and style your vehicle deserves.</p>
+          <div class="service-details">
+            <span class="price">Contact us</span>
+            <span class="time">Time: 10 hrs</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="images/remove_tint.webp" alt="Tint Removal Process">
+          <h3>Tint Removal</h3>
+          <p>Need old or damaged window tint removed? We specialize in **safe, clean tint removal** without damaging your glass or defroster lines. Whether you're upgrading or fixing a poor installation, let us **restore a clear, clean finish** to your windows.</p>
+          <div class="service-details">
+            <span class="price">Contact us</span>
+            <span class="time">Time: 4 hrs</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <img src="images/tint_remove_and_apply.webp" alt="Tint Removal and Installation">
+          <h3>Windows Tint Installation + Removal of Old Tint</h3>
+          <p>Start fresh with our **full-service tint removal and new installation package.** We'll safely remove your old film and install a brand-new, high-quality tint – all in one visit. Perfect for faded, bubbling, or outdated tints that need a **clean reset and upgraded protection**. **Contact us today for a seamless transformation.**</p>
+          <div class="service-details">
+            <span class="price">Contact us</span>
+            <span class="time">Time: 11 hrs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Address & Hours</h3>
+          <p>90 Glenn Way, San Carlos, CA, 94070</p>
+          <p><strong>Hours:</strong></p>
+          <p>Monday - Friday: 8am - 5:30pm</p>
+          <p>Saturday: 9am - 5:30pm</p>
+          <p>Sunday: 9am - 5:30pm</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61572377826208" target="_blank">
+              <img src="images/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/360.tinted/" target="_blank">
+              <img src="images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.tiktok.com/@360tinted?_t=ZP-8uTYjT9bYEg&_r=1" target="_blank">
+              <img src="images/tiktok2.png" alt="TikTok" class="social-icon">
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <a href="#contact" class="btn">Contact</a>
+          <p class="phone">
+            <i class="fas fa-phone"></i> <a href="tel:+14156494817">(415) 630-3646</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 360 Tinted. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <script src="//code.tidio.co/4on4aihudneqp1lzma2oad2wiuww4kgr.js" async></script>
+</body>
+</html>
