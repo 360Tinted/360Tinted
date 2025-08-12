@@ -507,68 +507,58 @@
     }
 
     @media (max-width: 768px) {
-      /* Ajustes no cabeçalho */
-      header {
-        padding: 100px 0;
-        min-height: auto;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-      
-      .logo-new {
-        max-width: 180px;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+  /* --- Ajustes no Cabeçalho e na Imagem de Fundo para Mobile --- */
+  header {
+    background-position: 50% 50%; /* Centraliza a imagem para melhor visualização */
+    background-size: cover; /* Garante que a imagem cubra todo o espaço, mas sem distorcer excessivamente */
+    min-height: 500px; /* Reduz a altura mínima para ser mais proporcional em telas pequenas */
+    padding: 20px 0;
+  }
 
-    .menu-toggle {
-        display: flex; /* Exibe o menu hambúrguer */
-    }
-    
-    .main-nav {
-        /* Remove a regra que esconde o menu */
-        display: none;
-        position: fixed;
-        top: 0;
-        bottom: auto;
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-    
-    .main-nav .container {
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px;
-    }
-    
-    .main-nav ul {
-        margin-left: 0;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .btn-quote {
-        /* Remova a regra "display: none;" e adicione estas regras para exibir o botão corretamente */
-        display: block; /* Garante que o botão seja exibido */
-        margin: 20px auto 0; /* Adiciona margem e centraliza o botão */
-        width: calc(100% - 40px); /* Ajusta a largura para telas menores */
-    }
-    
-    .header-content {
-        padding-top: 100px;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    header p {
-        font-size: 1.2rem;
-    }
+  .logo-new {
+    top: 20px;
+    left: 20px;
+    transform: none; /* Mantém o logo no canto superior esquerdo */
+    width: 150px; /* Ajusta o tamanho do logo */
+  }
+
+  /* --- Posicionamento do Botão de Agendamento e Menu Hamburguer --- */
+  .menu-toggle {
+    display: block; /* Exibe o ícone do menu hambúrguer */
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+
+  .btn-quote {
+    display: block; /* Garante que o botão seja visível em dispositivos móveis */
+    position: absolute;
+    top: 25px;
+    right: 70px; /* Posição para o botão ficar à esquerda do menu hambúrguer */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* --- Outros Ajustes de Layout para Mobile --- */
+  .main-nav {
+    display: none;
+  }
+  
+  .header-content {
+    padding-top: 150px; /* Ajusta o espaçamento do conteúdo para baixo do cabeçalho */
+    text-align: center;
+  }
+
+  .header-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+}
 
       
       /* Ajustes na seção de serviços */
