@@ -510,9 +510,10 @@
     @media (max-width: 768px) {
   /* --- Ajustes no Cabeçalho e na Imagem de Fundo para Mobile --- */
   header {
-    background-position: 50% 50%; /* Centraliza a imagem para melhor visualização */
-    background-size: cover; /* Garante que a imagem cubra todo o espaço, mas sem distorcer excessivamente */
-    min-height: 500px; /* Reduz a altura mínima para ser mais proporcional em telas pequenas */
+    background-position: 50% 50%;
+    background-size: auto 60%; /* Reduz o tamanho da imagem para 60% da largura da tela, mantendo a proporção */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    min-height: 500px;
     padding: 20px 0;
   }
 
