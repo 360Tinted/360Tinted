@@ -153,14 +153,19 @@
     }
 
     .btn-quote {
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-left: auto;
-    }
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  margin-top: 10px;
+  display: inline-block;
+}
 
     .btn-quote:hover {
       background-color: #0056b3;
@@ -507,19 +512,17 @@
     }
 
     @media (max-width: 768px) {
-      /* Ajustes no cabeçalho */
-      header {
-        padding: 100px 0;
-        min-height: auto;
-        background-size: cover;
-      }
-      
-      .logo-new {
-        max-width: 180px;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .logo-new {
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
       
       .menu-toggle {
         display: flex;
@@ -546,15 +549,10 @@
       }
       
       .btn-quote {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #007BFF;
-  color: #fff;
-  border-radius: 5px;
-  margin-top: 10px;
-  text-align: center;
-}
+    margin: 10px auto 0;
+    display: inline-block;
+    text-align: center;
+  }
       
       .header-content {
         padding-top: 100px;
@@ -667,7 +665,7 @@ src="https://www.facebook.com/tr?id=4175751916084089&ev=PageView&noscript=1"
     </button>
 
     <img src="images/Logo3.png" alt="360 Tinted Logo" class="logo-new">
-
+    <a href="https://book.360tinted.com" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
     <nav class="main-nav" id="main-nav">
   <div class="container">
     <ul>
@@ -677,8 +675,7 @@ src="https://www.facebook.com/tr?id=4175751916084089&ev=PageView&noscript=1"
       <li><a href="gallery.html" target="_blank" rel="noopener noreferrer">Gallery</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
-    <a href="https://book.360tinted.com" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
-  </div>
+    </div>
 </nav>
 <div class="header-content">
   <h1>Professional Window Tinting in San Carlos & Bay Area</h1>
