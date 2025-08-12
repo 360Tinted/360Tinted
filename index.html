@@ -523,85 +523,113 @@
     }
 
     @media (max-width: 768px) {
-  /* --- Ajustes no Cabeçalho e na Imagem de Fundo para Mobile --- */
+  /* --- CABEÇALHO --- */
   header {
-    position: relative; /* Garante que o posicionamento absoluto dos elementos internos seja relativo a este cabeçalho */
+    background-size: cover; /* Ajusta a imagem do Tesla para cobrir o fundo */
+    background-position: center bottom; /* Centraliza horizontalmente e alinha na parte inferior */
+    background-repeat: no-repeat;
     padding-top: 100px;
-    min-height: 400px; /* Aumenta a altura para que o botão e o logo tenham espaço */
+    min-height: auto;
+    position: relative;
+    max-height: none;
   }
-
+  
+  /* --- LOGOTIPO CENTRALIZADO --- */
   .logo-new {
-    max-width: 150px;
-    top: 20px;
-    left: 20px;
-    transform: none; /* Remove a centralização e posiciona no canto */
-  }
- .btn-quote {
-    display: block; /* Garante que o botão seja visível */
     position: absolute;
-    top: 30px; /* Posiciona o botão verticalmente */
-    right: 20px; /* Posiciona o botão à direita */
-    padding: 10px 20px;
-    font-size: 1rem;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    max-width: 150px; /* Reduz o tamanho no mobile */
+    z-index: 2;
+  }
+  
+  /* --- BOTÃO DE AGENDAMENTO (CENTRALIZADO ABAIXO DO LOGO) --- */
+  .btn-quote {
+    display: block;
+    position: absolute;
+    top: 100px; /* Posiciona abaixo do logo */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    font-size: 0.9rem;
+    padding: 8px 15px;
     z-index: 10;
   }
-
+  
+  /* --- MENU HAMBÚRGUER (CANTO ESQUERDO) --- */
   .menu-toggle {
-    display: block; /* Exibe o menu hambúrguer */
-    position: relative;
-    z-index: 2; /* Garante que o botão fique acima do menu aberto */
-    margin-right: 20px;
-    cursor: pointer;
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 20px; /* Posiciona no canto esquerdo */
+    z-index: 11;
   }
-
+  
+  /* --- AJUSTES NO TEXTO DO CABEÇALHO --- */
+  .header-content {
+    padding-top: 250px; /* Empurra o texto para baixo, para a área preta do carro */
+    text-align: center;
+    color: #fff; /* Garante que a cor da fonte seja branca para ser visível */
+  }
+  
+  .header-content h1 {
+    font-size: 1.5rem; /* Reduz o tamanho da fonte */
+  }
+  
+  .header-content p {
+    font-size: 1rem; /* Reduz o tamanho da fonte */
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  
+  /* --- OUTROS AJUSTES DE LAYOUT --- */
   .main-nav {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    padding-top: 80px;
+    text-align: center;
   }
-
-  .main-nav.open {
-    opacity: 1;
-    visibility: visible;
+  
+  .main-nav.active {
+    display: block;
   }
 
   .main-nav .container {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
   .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 30px; /* Espaço entre o menu e o botão no mobile */
+    gap: 20px;
   }
 
-  .main-nav ul li a {
+  .main-nav a {
     font-size: 1.5rem;
+    padding: 10px 0;
   }
-  .header-content {
-    padding-top: 80px; /* Ajusta o espaçamento do conteúdo abaixo do cabeçalho */
-    text-align: center;
+  
+  .landing-service-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 20px;
   }
 
-  .header-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .header-content p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+  .footer-section {
+    width: 100%;
   }
 }
       
