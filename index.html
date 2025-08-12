@@ -68,7 +68,7 @@
     }
 
     /* Menu de Navegação */
-    .main-nav {
+  .main-nav {
   position: absolute;
   top: 0;
   left: 0;
@@ -79,9 +79,9 @@
 }
 
 .main-nav .container {
-  display: flex; /* Habilita o Flexbox */
+  display: flex;
   justify-content: flex-end; /* Alinha o conteúdo à direita */
-  align-items: center; /* Alinha verticalmente no centro */
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -93,7 +93,6 @@
   padding: 0;
   display: flex;
   gap: 20px;
-  /* Removido: margin-left: 320px; - O Flexbox fará o espaçamento automaticamente */
 }
 
 .btn-quote {
@@ -103,13 +102,16 @@
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  margin-left: 20px; /* Adiciona um pequeno espaçamento entre o último item do menu e o botão */
+  margin-left: 20px;
 }
 
 .btn-quote:hover {
   background-color: #0056b3;
 }
 
+.menu-toggle {
+  display: none; /* Oculta o menu hambúrguer em telas grandes */
+}
     .main-nav a {
       color: #fff;
       text-decoration: none;
@@ -523,45 +525,75 @@
     @media (max-width: 768px) {
   /* --- Ajustes no Cabeçalho e na Imagem de Fundo para Mobile --- */
   header {
-    background-position: 50% 50%;
-    background-size: auto 60%; /* Reduz o tamanho da imagem para 60% da largura da tela, mantendo a proporção */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    min-height: 500px;
-    padding: 20px 0;
+    background-position: center bottom;
+    background-size: 80% auto;
+    background-repeat: no-repeat;
+    min-height: auto; /* Ajusta a altura automática para o conteúdo */
+    padding: 15px 0; /* Reduz o padding superior e inferior */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre o logo e o menu toggle */
   }
 
   .logo-new {
-    top: 20px;
-    left: 20px;
-    transform: none;
-    width: 150px;
+    width: 120px; /* Reduz o tamanho do logo no mobile */
+    margin-left: 20px;
   }
 
-  /* --- Posicionamento do Botão de Agendamento e Menu Hamburguer --- */
   .menu-toggle {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 30px;
+    display: block; /* Exibe o menu hambúrguer */
+    position: relative;
+    z-index: 2; /* Garante que o botão fique acima do menu aberto */
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .main-nav.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .main-nav .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px; /* Espaço entre o menu e o botão no mobile */
+  }
+
+  .main-nav ul li a {
+    font-size: 1.5rem;
   }
 
   .btn-quote {
-    display: block;
-    position: absolute;
-    top: 25px;
-    right: 70px;
-    z-index: 1000;
-    font-size: 14px;
-    padding: 8px 12px;
+    display: block; /* Garante que o botão seja exibido no mobile */
+    margin-left: 0; /* Remove a margem da esquerda */
+    padding: 15px 30px;
+    font-size: 1.2rem;
   }
 
-  /* --- Outros Ajustes de Layout para Mobile --- */
-  .main-nav {
-    display: none;
-  }
-  
   .header-content {
-    padding-top: 150px;
+    padding-top: 80px; /* Ajusta o espaçamento do conteúdo abaixo do cabeçalho */
     text-align: center;
   }
 
@@ -570,11 +602,10 @@
   }
 
   .header-content p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
   }
 }
-
       
       /* Ajustes na seção de serviços */
       /* Original #services was removed */
