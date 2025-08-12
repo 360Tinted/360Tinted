@@ -153,19 +153,14 @@
     }
 
     .btn-quote {
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-  margin-top: 10px;
-  display: inline-block;
-}
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-left: auto;
+    }
 
     .btn-quote:hover {
       background-color: #0056b3;
@@ -512,59 +507,69 @@
     }
 
     @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .logo-new {
-    max-width: 150px;
-    margin-bottom: 10px;
-  }
-      
-      .menu-toggle {
+      /* Ajustes no cabeçalho */
+      header {
+        padding: 100px 0;
+        min-height: auto;
+        background-size: cover;
         display: flex;
-      }
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
       
-      .main-nav {
+      .logo-new {
+        max-width: 180px;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o menu hambúrguer */
+    }
+    
+    .main-nav {
+        /* Remove a regra que esconde o menu */
         display: none;
         position: fixed;
         top: 0;
         bottom: auto;
         background-color: rgba(0, 0, 0, 0.9);
-      }
-      
-      .main-nav .container {
+    }
+    
+    .main-nav .container {
+        flex-direction: column;
         justify-content: center;
         padding: 10px;
-      }
-      
-      .main-nav ul {
+    }
+    
+    .main-nav ul {
         margin-left: 0;
         gap: 10px;
         flex-wrap: wrap;
         justify-content: center;
-      }
-      
-      .btn-quote {
-    margin: 10px auto 0;
-    display: inline-block;
-    text-align: center;
-  }
-      
-      .header-content {
+    }
+    
+    .btn-quote {
+        /* Remova a regra "display: none;" e adicione estas regras para exibir o botão corretamente */
+        display: block; /* Garante que o botão seja exibido */
+        margin: 20px auto 0; /* Adiciona margem e centraliza o botão */
+        width: calc(100% - 40px); /* Ajusta a largura para telas menores */
+    }
+    
+    .header-content {
         padding-top: 100px;
-      }
-      
-      header h1 {
+    }
+    
+    header h1 {
         font-size: 2rem;
-      }
-      
-      header p {
+    }
+    
+    header p {
         font-size: 1.2rem;
-      }
+    }
+
       
       /* Ajustes na seção de serviços */
       /* Original #services was removed */
@@ -657,7 +662,7 @@ src="https://www.facebook.com/tr?id=4175751916084089&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 <body>
-  <header>
+ <header>
     <button class="menu-toggle" id="mobile-menu">
       <span></span>
       <span></span>
