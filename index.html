@@ -525,19 +525,25 @@
     @media (max-width: 768px) {
   /* --- Ajustes no Cabeçalho e na Imagem de Fundo para Mobile --- */
   header {
-    background-position: center bottom;
-    background-size: 80% auto;
-    background-repeat: no-repeat;
-    min-height: auto; /* Ajusta a altura automática para o conteúdo */
-    padding: 15px 0; /* Reduz o padding superior e inferior */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Espaço entre o logo e o menu toggle */
+    position: relative; /* Garante que o posicionamento absoluto dos elementos internos seja relativo a este cabeçalho */
+    padding-top: 100px;
+    min-height: 400px; /* Aumenta a altura para que o botão e o logo tenham espaço */
   }
 
   .logo-new {
-    width: 120px; /* Reduz o tamanho do logo no mobile */
-    margin-left: 20px;
+    max-width: 150px;
+    top: 20px;
+    left: 20px;
+    transform: none; /* Remove a centralização e posiciona no canto */
+  }
+ .btn-quote {
+    display: block; /* Garante que o botão seja visível */
+    position: absolute;
+    top: 30px; /* Posiciona o botão verticalmente */
+    right: 20px; /* Posiciona o botão à direita */
+    padding: 10px 20px;
+    font-size: 1rem;
+    z-index: 10;
   }
 
   .menu-toggle {
@@ -584,14 +590,6 @@
   .main-nav ul li a {
     font-size: 1.5rem;
   }
-
-  .btn-quote {
-    display: block; /* Garante que o botão seja exibido no mobile */
-    margin-left: 0; /* Remove a margem da esquerda */
-    padding: 15px 30px;
-    font-size: 1.2rem;
-  }
-
   .header-content {
     padding-top: 80px; /* Ajusta o espaçamento do conteúdo abaixo do cabeçalho */
     text-align: center;
