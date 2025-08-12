@@ -69,32 +69,45 @@
 
     /* Menu de Navegação */
     .main-nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px 0;
-      z-index: 1;
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  z-index: 1;
+}
 
-    .main-nav .container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
+.main-nav .container {
+  display: flex; /* Habilita o Flexbox */
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  align-items: center; /* Alinha verticalmente no centro */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .main-nav ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  /* Removido: margin-left: 320px; - O Flexbox fará o espaçamento automaticamente */
 }
 
 .btn-quote {
-    display: block; /* Garante que o botão esteja sempre visível no desktop */
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-left: 20px; /* Adiciona um pequeno espaçamento entre o último item do menu e o botão */
+}
+
+.btn-quote:hover {
+  background-color: #0056b3;
 }
 
     .main-nav a {
@@ -662,8 +675,7 @@ src="https://www.facebook.com/tr?id=4175751916084089&ev=PageView&noscript=1"
     </button>
 
     <img src="images/Logo3.png" alt="360 Tinted Logo" class="logo-new">
-    <a href="https://book.360tinted.com" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
-    <nav class="main-nav" id="main-nav">
+        <nav class="main-nav" id="main-nav">
   <div class="container">
     <ul>
       <li><a href="#home">Home</a></li>
@@ -672,6 +684,7 @@ src="https://www.facebook.com/tr?id=4175751916084089&ev=PageView&noscript=1"
       <li><a href="gallery.html" target="_blank" rel="noopener noreferrer">Gallery</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
+    <a href="https://book.360tinted.com" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
     </div>
 </nav>
 <div class="header-content">
