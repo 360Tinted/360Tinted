@@ -68,50 +68,34 @@
     }
 
     /* Menu de Navegação */
-  .main-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 0;
-  z-index: 1;
-}
+    .main-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+      z-index: 1;
+    }
 
-.main-nav .container {
-  display: flex;
-  justify-content: flex-end; /* Alinha o conteúdo à direita */
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+    .main-nav .container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
+    .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      margin-left: 320px;
+    }
 
-.btn-quote {
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  margin-left: 20px;
-}
-
-.btn-quote:hover {
-  background-color: #0056b3;
-}
-
-.menu-toggle {
-  display: none; /* Oculta o menu hambúrguer em telas grandes */
-}
     .main-nav a {
       color: #fff;
       text-decoration: none;
@@ -523,115 +507,59 @@
     }
 
     @media (max-width: 768px) {
-  /* --- CABEÇALHO --- */
-  header {
-    background-size: cover; /* Ajusta a imagem do Tesla para cobrir o fundo */
-    background-position: center bottom; /* Centraliza horizontalmente e alinha na parte inferior */
-    background-repeat: no-repeat;
-    padding-top: 100px;
-    min-height: auto;
-    position: relative;
-    max-height: none;
-  }
-  
-  /* --- LOGOTIPO CENTRALIZADO --- */
-  .logo-new {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-    max-width: 150px; /* Reduz o tamanho no mobile */
-    z-index: 2;
-  }
-  
-  /* --- BOTÃO DE AGENDAMENTO (CENTRALIZADO ABAIXO DO LOGO) --- */
-  .btn-quote {
-    display: block;
-    position: absolute;
-    top: 100px; /* Posiciona abaixo do logo */
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-    font-size: 0.9rem;
-    padding: 8px 15px;
-    z-index: 10;
-  }
-  
-  /* --- MENU HAMBÚRGUER (CANTO ESQUERDO) --- */
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    top: 30px;
-    left: 20px; /* Posiciona no canto esquerdo */
-    z-index: 11;
-  }
-  
-  /* --- AJUSTES NO TEXTO DO CABEÇALHO --- */
-  .header-content {
-    padding-top: 250px; /* Empurra o texto para baixo, para a área preta do carro */
-    text-align: center;
-    color: #fff; /* Garante que a cor da fonte seja branca para ser visível */
-  }
-  
-  .header-content h1 {
-    font-size: 1.5rem; /* Reduz o tamanho da fonte */
-  }
-  
-  .header-content p {
-    font-size: 1rem; /* Reduz o tamanho da fonte */
-    margin-bottom: 20px;
-    color: #000000;
-  }
-  
-  /* --- OUTROS AJUSTES DE LAYOUT --- */
-  .main-nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    padding-top: 80px;
-    text-align: center;
-  }
-  
-  .main-nav.active {
-    display: block;
-  }
-
-  .main-nav .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .main-nav a {
-    font-size: 1.5rem;
-    padding: 10px 0;
-  }
-  
-  .landing-service-card {
-    flex: 1 1 100%;
-    max-width: 100%;
-    min-height: auto;
-    padding: 20px;
-  }
-
-  .footer-section {
-    width: 100%;
-  }
-}
+      /* Ajustes no cabeçalho */
+      header {
+        padding: 100px 0;
+        min-height: auto;
+        background-size: cover;
+      }
+      
+      .logo-new {
+        max-width: 180px;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .main-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+      
+      .main-nav .container {
+        justify-content: center;
+        padding: 10px;
+      }
+      
+      .main-nav ul {
+        margin-left: 0;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .btn-quote {
+        display: none;
+      }
+      
+      .header-content {
+        padding-top: 100px;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      header p {
+        font-size: 1.2rem;
+      }
       
       /* Ajustes na seção de serviços */
       /* Original #services was removed */
@@ -732,7 +660,8 @@ src="https://www.facebook.com/tr?id=4175751916084089&ev=PageView&noscript=1"
     </button>
 
     <img src="images/Logo3.png" alt="360 Tinted Logo" class="logo-new">
-        <nav class="main-nav" id="main-nav">
+    <a href="https://book.360tinted.com" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
+    <nav class="main-nav" id="main-nav">
   <div class="container">
     <ul>
       <li><a href="#home">Home</a></li>
@@ -741,7 +670,6 @@ src="https://www.facebook.com/tr?id=4175751916084089&ev=PageView&noscript=1"
       <li><a href="gallery.html" target="_blank" rel="noopener noreferrer">Gallery</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
-    <a href="https://book.360tinted.com" target="_blank" rel="noopener noreferrer" class="btn-quote">Book an Appointment</a>
     </div>
 </nav>
 <div class="header-content">
