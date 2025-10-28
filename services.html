@@ -104,7 +104,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between; /* Para empurrar o preço e tempo para baixo */
-      min-height: 500px; /* Aumentei um pouco a altura mínima para acomodar a imagem */
+      min-height: 470px; /* Aumentei um pouco a altura mínima para acomodar a imagem */
     }
 
     .service-card img {
@@ -242,12 +242,22 @@
 
     /* Responsividade */
     @media (max-width: 1024px) {
-      .service-card {
-        flex: 1 1 calc(50% - 30px); /	* 2 colunas */
-        max-width: calc(50% - 30px);	
-      }
+    .services-container {
+        padding: 20px 10px;
     }
 
+    .service-card {
+        flex: 1 1 calc(50% - 30px); /* 2 colunas */
+        max-width: calc(50% - 30px);
+        /* NOVO VALOR FORÇADO PARA TABLET (Acomoda o texto mais longo) */
+        min-height: 430px; 
+    }
+    
+    .service-card img {
+        /* CRÍTICO: Altura fixa forçada */
+        height: 180px !important; 
+    }
+}
     @media (max-width: 768px) {
       /* Ajustes no cabeçalho fixo */
       header {
@@ -531,6 +541,7 @@ src="https://www.facebook.com/tr?id=4175751916084089&ev=PageView&noscript=1"
   <script src="//code.tidio.co/4on4aihudneqp1lzma2oad2wiuww4kgr.js" async></script>
 </body>
 </html>
+
 
 
 
